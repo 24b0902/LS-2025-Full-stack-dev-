@@ -4,6 +4,7 @@ from .views import register_view, verify_view, login_view, logout_view, dashboar
 urlpatterns = [
     path('register/', register_view, name='register'),
     path('verify/<str:token>/', verify_view, name='verify'),
+    path('', lambda request: redirect('login/')),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('dashboard/', dashboard_view, name='dashboard'),
