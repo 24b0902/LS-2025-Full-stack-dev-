@@ -8,7 +8,10 @@ class UserAdmin(admin.ModelAdmin):
     search_fields = ['username', 'email']
     ordering = ['username']
 
-admin.site.unregister(User)
+try:
+    admin.site.unregister(User)
+except admin.sites.NotRegistered:
+    pass  # User model was not registered yet, ignore the error
 admin.site.register(User, UserAdmin)
 
 admin.site.site_header = "YouTube Clone Admin"
