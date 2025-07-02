@@ -1,6 +1,8 @@
 from django.urls import path
 from django.shortcuts import redirect
 from .views import register_view, verify_view, login_view, logout_view, dashboard_view
+from . import views
+
 app_name = "accounts"
 
 urlpatterns = [
